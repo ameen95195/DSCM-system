@@ -14,7 +14,7 @@ class DrugController extends Controller
         public function index()
     {
         return Drug::select('id', 'trade_name', 'scientific_name',
-        'drug_description', 'drug_dose', 'image')->with('drugType')->get();
+        'drug_description', 'drug_dose', 'image', 'price')->with('drugType')->get();
     }
 
     public function store(Request $request)
@@ -25,7 +25,8 @@ class DrugController extends Controller
             'scientific_name' => 'required',
             'drug_description' => 'required',
             'drug_dose' => 'required',
-            'drug_type_id' => 'required'
+            'drug_type_id' => 'required',
+            'price' => 'required'
             //'image'=>'required'
             // 'image'=>'required|image'
         ]);

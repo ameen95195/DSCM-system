@@ -4,6 +4,7 @@ namespace App\Http\Controllers\DashboardControllers;
 
 use Carbon\Carbon;
 use App\Models\Role;
+use App\Models\User;
 use App\Models\Order;
 use App\Models\Stock;
 use App\Models\Status;
@@ -218,6 +219,7 @@ class OrderController extends Controller
             $newAmount = $stockAmount - $orderedAmount;
 
             $totalCost = $totalCost + $od->drug_total_cost;
+            $supplierEmail = User::where('id', $buyerSellerOrder->seller_id)->first();
 
             $buyerStockDetails = StockDetails::create([
                 'drug_amount' => $od->drug_amount,
@@ -227,7 +229,8 @@ class OrderController extends Controller
                 'expiration_date' => $stockDetails->expiration_date,
                 'drug_unit_price' => $stockDetails->drug_unit_price,
                 'stock_id' => $buyerStock->id,
-                'drug_id' => $stockDetails->drug_id
+                'drug_id' => $stockDetails->drug_id,
+                'supplier_email' => $supplierEmail->email
             ]);
 
             $stockDetails->drug_amount = $newAmount;

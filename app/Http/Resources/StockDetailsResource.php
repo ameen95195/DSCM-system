@@ -23,6 +23,7 @@ class StockDetailsResource extends JsonResource
                 'production_date' => $this->production_date,
                 'expiration_date' => $this->expiration_date,
                 'drug_unit_price' => $this->drug_unit_price,
+                'supplier_email' => $this->supplier_email,
                 'created_at' => $this->created_at,
                 'updated_at' => $this->updated_at
             ],

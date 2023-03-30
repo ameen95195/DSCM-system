@@ -18,6 +18,7 @@ class StockDetails extends Model
         'drug_unit_price',
         'stock_id',
         'drug_id',
+        'supplier_email'
     ];
     protected $table='stock_details';
     public function drug()

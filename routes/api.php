@@ -83,6 +83,7 @@ Route::group(['middleware' => ['auth:sanctum']], function() {
     Route::get('/sellers', [HomeController::class, 'sellers']);
     Route::get('/search/{name}', [HomeController::class, 'search']); 
     // Route::get('/autocomplete', [HomeController::class, 'autocomplete']);
+    Route::get('/replenishmentAlert', [HomeController::class, 'replenishmentAlert']);
     
     // Role Controller
     Route::resource('role', RoleController::class);

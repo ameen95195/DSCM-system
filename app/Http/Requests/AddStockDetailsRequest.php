@@ -29,7 +29,9 @@ class AddStockDetailsRequest extends FormRequest
             'drug_residual' => ['required'],
             'production_date' => ['required'],
             'expiration_date' => ['required'],
-            'drug_unit_price' => ['required']
+            'drug_unit_price' => ['required'],
+            'stock_id' => ['required'],
+            'drug_id' => ['required']
         ];
     }
 }

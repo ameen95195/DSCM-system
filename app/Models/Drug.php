@@ -14,7 +14,8 @@ class Drug extends Model
         'drug_description',
         'drug_dose',
         'image',
-        'drug_type_id'
+        'drug_type_id',
+        'price'
     ];
     protected $table = 'drugs';
     public function StockDetails()
